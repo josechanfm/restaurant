@@ -67,14 +67,16 @@ $config['ci_bootstrap'] = array(
 		),
 		'school' => array(
 			'name'		=> 'School',
-			'url'		=> 'school',
+			'url'		=> 'schools',
 			'icon'		=> 'fa fa-bank',
 			'children'  => array(
 				'School'			=> 'school',
-				'Faculty'		=> 'school/faculty',
-				'Department'	=> 'school/department',
-				'Course'	=>'school/course',
-				'Gen PDF'	=>'school/gen_pdf'
+				'Faculty'		=> 'schools/faculty',
+				'Department'	=> 'schools/department',
+				'Course'	=>'schools/course',
+				'Gen PDF'	=>'school/gen_pdf',
+				'Import'	=>'school/import',
+				'Mailer'	=>'school/mailer'
 			)
 		),
 		'user' => array(
@@ -162,6 +164,19 @@ $config['ci_bootstrap'] = array(
 			'url'		=> CI_BOOTSTRAP_REPO,
 			'target'	=> '_blank',
 			'color'		=> 'text-green'
+		),
+	),
+
+	// Email config
+	'email' => array(
+		'from_email'		=> 'no-replay@ipm.edu.mo',
+		'from_name'			=> 'no-replay',
+		'subject_prefix'	=> '(Auto Mailer)',
+		
+		// Mailgun HTTP API
+		'mailgun_api'		=> array(
+			'domain'			=> '',
+			'private_api_key'	=> ''
 		),
 	),
 

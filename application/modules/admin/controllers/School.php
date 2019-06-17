@@ -7,24 +7,6 @@ class School extends Admin_Controller {
 	{
 		$this->render('schools/home');
 	}
-	public function faculty(){
-		$crud=$this->generate_crud('faculties');
-		$this->render_crud();
-	}
-	public function department(){
-		$crud=$this->generate_crud('departments');
-		$crud->set_relation('faculty_id','faculties','name');
-		$this->render_crud();
-	}
-	public function course(){
-		// $this->load->library('gc_dependent_select');
-		$this->load->model('gc_dependent_select_model','gc_dependent');
-		$crud=$this->generate_crud('courses');
-		//to set up the dependency relation, you need to create an get_xxxx_properties() function in the model
-		$this->mGridTitle=$this->gc_dependent->get_js($crud,$this->gc_dependent->get_courses_properties());
-
-		$this->render_crud();
-	}
 
 	public function gen_pdf(){
 		$this->load->model('pdf_model');
@@ -46,5 +28,40 @@ class School extends Admin_Controller {
 			array('campus'=>'Main Campus')
 		);
 	}
-
+/*	
+	public function send_email(){
+		$this->load->library('my_email','email');
+		$this->email->send_email_template(
+			'josechan@ipm.edu.mo',
+			'josechan',
+			'test',
+			'general',
+			array('full_name'=>'jose chan')
+		);
+	}
+*/
+	public function mailer(){
+		$this->load->library('form_builder');
+		$this->load->library('my_email','email');
+		$form = $this->form_builder->create_form();
+		if ($form->validate())
+		{
+			$this->email->send_email_template(
+				$this->input->post('reciever_email'),
+				$this->input->post('reciever_name'),
+				$this->input->post('subject'),
+				'schools/notice',
+				array(
+					'sender_email'=>$this->input->post('sender_email'),
+					'sender_name'=>$this->input->post('sender_name'),
+					'reciever_email'=>$this->input->post('reciever_email'),
+					'reciever_name'=>$this->input->post('reciever_name'),
+					'subject'=>$this->input->post('subject'),
+					'message'=>$this->input->post('message'),
+				)
+			);
+		}
+		$this->mViewData['form'] = $form;
+		$this->render('schools/mailer');
+	}
 }

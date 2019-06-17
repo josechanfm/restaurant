@@ -8,6 +8,21 @@
 
 $config = array(
 
+	// school mailer
+	'school/mailer' => array(
+		array(
+			'field'		=> 'sender_email',
+			'label'		=> 'Sender Email',
+			'rules'		=> 'required',
+		),
+		array(
+			'field'		=> 'reciever_email',
+			'label'		=> 'Reciever Email',
+			'rules'		=> 'required',
+		),
+	),
+
+
 	// Admin User Login
 	'login/index' => array(
 		array(
