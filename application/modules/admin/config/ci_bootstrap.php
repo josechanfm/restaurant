@@ -16,7 +16,8 @@ $config['ci_bootstrap'] = array(
 
 	// Site name
 	'site_name' => 'Admin Panel',
-
+	'site_name_mini'=>'CI3',
+	
 	// Default page title prefix
 	'page_title_prefix' => '',
 
@@ -63,6 +64,18 @@ $config['ci_bootstrap'] = array(
 			'name'		=> 'Home',
 			'url'		=> '',
 			'icon'		=> 'fa fa-home',
+		),
+		'school' => array(
+			'name'		=> 'School',
+			'url'		=> 'school',
+			'icon'		=> 'fa fa-bank',
+			'children'  => array(
+				'School'			=> 'school',
+				'Faculty'		=> 'school/faculty',
+				'Department'	=> 'school/department',
+				'Course'	=>'school/course',
+				'Gen PDF'	=>'school/gen_pdf'
+			)
 		),
 		'user' => array(
 			'name'		=> 'Users',

@@ -1,6 +1,7 @@
 <?php
 
 	$lang['website_name'] = "我的网站";
+	$lang['current_language'] = "目前语言";
 	
 	// Menu
 	$lang['home'] = "主页";

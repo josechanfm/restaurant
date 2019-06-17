@@ -1,5 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+require_once APPPATH.'third_party/PHPExcel/Classes/PHPExcel.php';
+require_once APPPATH.'third_party/PHPExcel/Classes/PHPExcel/IOFactory.php';
 
 /**
  * Library to import data from .csv files
@@ -76,7 +78,6 @@ class Data_importer {
 			if ($rowIndex <= $skip) continue;
 			$temp=$persistent;
 			foreach($fields as $field=>$col){
-				echo $col.'==='.$field.'<br>';
 				$value = $objWorksheet->getCell($col . $rowIndex);
 				$temp[$field]=$value.'';
 			}
@@ -91,7 +92,6 @@ class Data_importer {
 				}
 			}
 		}
-		//echo json_encode($data);
 		return $data;
 	}	
 	/**
@@ -110,7 +110,16 @@ class Data_importer {
 		$CI->load->database();
 
 		$data=$this->_excel_data($file, $skip, $fields,$format,$persistent);
-		$CI->db->insert_batch($table,$data);
+		echo '<h1>The data to import!</h1><br>';
+		echo 'from file:'.FCPATH.$file.'<br>';
+		echo 'to table: '.$table.'<br>';
+		echo 'skip row: '.$skip.'<br>';
+		echo 'field array: '.json_encode($fields).'<br>';
+		echo 'format to change: '.json_encode($format).'<br>';
+		echo 'persistent field:'.json_encode($persistent).'<br>';
+		echo '<p></p>';
+		echo json_encode($data);
+		//$CI->db->insert_batch($table,$data);
 	}
 
 	public function _convert_date($data, $field){
@@ -123,19 +132,4 @@ class Data_importer {
 		}
 		return $data;
 	}
-
-
-
-/*	 	
-	public function excel_import($file, $table)
-	{
-		// prepend file path with project directory
-		$excel = PHPExcel_IOFactory::load(FCPATH.$file);
-
-		foreach ($excel->getWorksheetIterator() as $worksheet)
-		{
-			// to be completed
-		}
-	}
-*/	
 }
