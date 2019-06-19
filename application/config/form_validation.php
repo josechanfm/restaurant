@@ -6,6 +6,19 @@
  */
 
 $config = array(
+	// school mailer
+	'home/mailer' => array(
+		array(
+			'field'		=> 'sender_email',
+			'label'		=> 'Sender Email',
+			'rules'		=> 'required',
+		),
+		array(
+			'field'		=> 'reciever_email',
+			'label'		=> 'Reciever Email',
+			'rules'		=> 'required',
+		),
+	),
 
 	/** Example: 
 	'auth/login' => array(
@@ -22,11 +35,12 @@ $config = array(
 	),*/
 );
 
+
 /**
  * Google reCAPTCHA settings
  * https://www.google.com/recaptcha/
  */
 $config['recaptcha'] = array(
-	'site_key'		=> '',
-	'secret_key'	=> '',
+	'site_key'		=> '6Lf7bJ4UAAAAANaeh1Br92Mb7SEuDpBZKbxn597D',
+	'secret_key'	=> '6Lf7bJ4UAAAAAIe2df7MnhU3_3PKAXqOxnW_2Fkn'
 );

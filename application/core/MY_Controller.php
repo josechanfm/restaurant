@@ -72,7 +72,7 @@ class MY_Controller extends MX_Controller {
 		// load default values
 		$this->mBaseUrl = empty($this->mModule) ? base_url() : base_url($this->mModule).'/';
 		$this->mSiteName = empty($config['site_name']) ? '' : $config['site_name'];
-		$this->mSiteName_mini = empty($config['site_name']) ? '' : $config['site_name_mini'];
+		$this->mSiteName_mini = empty($config['site_name_mini']) ? '' : $config['site_name_mini'];
 
 		$this->mPageTitlePrefix = empty($config['page_title_prefix']) ? '' : $config['page_title_prefix'];
 		$this->mPageTitle = empty($config['page_title']) ? '' : $config['page_title'];

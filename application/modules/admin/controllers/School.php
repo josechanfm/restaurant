@@ -18,8 +18,8 @@ class School extends Admin_Controller {
 
 	}
 	public function import(){
-		$this->load->library('data_importer');
-		$this->data_importer->excel_import(
+		$this->load->library('MY_Excel');
+		$this->my_excel->excel_import(
 			'assets\uploads\faculties.xlsx',
 			'faculties',
 			1,
@@ -41,6 +41,7 @@ class School extends Admin_Controller {
 	}
 */
 	public function mailer(){
+		$this->add_script('https://www.google.com/recaptcha/api.js',true,'head');
 		$this->load->library('form_builder');
 		$this->load->library('my_email','email');
 		$form = $this->form_builder->create_form();

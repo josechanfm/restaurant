@@ -15,6 +15,22 @@ class MY_Email extends CI_Email {
 		$this->CI->config->load('ci_bootstrap');
 	}
 	
+	public function send_email_prepare($mail){
+		if(!empty($mail['sender'])){
+			$ci_config=$this->CI->config->item('ci_bootstrap');
+			$ci_config['email']['from_email']=$mail['sender']['email'];
+			$ci_config['email']['from_name']=$mail['sender']['name'];
+			$this->CI->config->set_item('ci_bootstrap',$ci_config);
+		};
+		$this->send_email_template(
+			$mail['reciever']['email'],
+			$mail['reciever']['name'],
+			$mail['subject'],
+			$mail['template'],
+			$mail['data']
+		);
+	}
+
 	// Send email templates using default CodeIgniter setting (e.g. SMTP)
 	// Template folder: /application/views/email/
 	public function send_email_template($to_email, $to_name, $subject, $view, $data = NULL)

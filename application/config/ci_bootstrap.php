@@ -96,9 +96,9 @@ $config['ci_bootstrap'] = array(
 
 	// Email config
 	'email' => array(
-		'from_email'		=> '',
-		'from_name'			=> '',
-		'subject_prefix'	=> '',
+		'from_email'		=> 'no-replay@ipm.edu.mo',
+		'from_name'			=> 'no-replay',
+		'subject_prefix'	=> '(Auto email)',
 		
 		// Mailgun HTTP API
 		'mailgun_api'		=> array(

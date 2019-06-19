@@ -6,7 +6,7 @@ require_once APPPATH.'third_party/PHPExcel/Classes/PHPExcel/IOFactory.php';
 /**
  * Library to import data from .csv files
  */
-class Data_importer {
+class MY_Excel {
 
 	/**
 	 * Import data from .csv file to a single table.
