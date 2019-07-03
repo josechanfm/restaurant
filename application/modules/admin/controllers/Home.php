@@ -9,6 +9,8 @@ class Home extends Admin_Controller {
 		$this->mViewData['count'] = array(
 			'users' => $this->users->count_all(),
 		);
+				$users=$this->db->get('users')->result();
+
 		$this->render('home');
 	}
 }

@@ -11,7 +11,12 @@ class Widget extends MX_Controller {
 	{
 		parent::__construct();
 	}
-	
+	function user_box(){
+		$data=array('users'=>$this->db->get('admin_users')->result());
+
+		$this->load->view('users',$data);
+	}
+
 	function info_box($color, $number, $label, $icon, $url = '#')
 	{
 		$data = array(

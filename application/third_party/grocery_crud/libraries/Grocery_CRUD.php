@@ -3646,7 +3646,7 @@ class Grocery_CRUD extends grocery_CRUD_States
 	protected $unset_export			= false;
 	protected $unset_print			= false;
 	protected $unset_back_to_list	= false;
-    protected $unset_clone			= true;
+    protected $unset_clone			= false;
 	protected $unset_columns		= null;
 	protected $unset_add_fields 	= null;
 	protected $unset_edit_fields	= null;
@@ -3786,7 +3786,6 @@ class Grocery_CRUD extends grocery_CRUD_States
 
 		return $this;
 	}
-
 
 	/**
 	 * Unsets the texteditor of the selected fields
