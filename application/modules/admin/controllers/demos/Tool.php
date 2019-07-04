@@ -1,12 +1,16 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+//if delete this demo, please delete the following files as well
 
-class School extends Admin_Controller {
+//admin/models/Php_model.php
 
-	public function index()
-	{
-		$this->render('schools/home');
-	}
+//modules/api/config/sms.php
+//moudles/api/controllers/sms.php
+
+//the libraries of 'my_Excel' and my_email are gineric library
+
+
+class Tool extends Admin_Controller {
 
 	public function gen_pdf(){
 		$this->load->model('pdf_model');
@@ -18,7 +22,7 @@ class School extends Admin_Controller {
 
 	}
 	public function import(){
-		$this->load->library('MY_Excel');
+		$this->load->library('my_Excel');
 		$this->my_excel->excel_import(
 			'assets\uploads\faculties.xlsx',
 			'faculties',
@@ -51,6 +55,11 @@ class School extends Admin_Controller {
 			);
 		}
 		$this->mViewData['form'] = $form;
-		$this->render('schools/mailer');
+		$this->render('demos/mailer');
+	}
+
+	public function sms(){
+		$this->render('demos/sms');
+
 	}
 }

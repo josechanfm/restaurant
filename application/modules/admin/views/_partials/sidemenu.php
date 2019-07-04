@@ -10,7 +10,7 @@
 			<?php $active = ($current_uri==$parent_params['url'] || $ctrler==$parent); ?>
 			<li class='<?php if ($active) echo 'active'; ?>'>
 				<a href='<?php echo $parent_params['url']; ?>'>
-					<i class='<?php echo $parent_params['icon']; ?>'></i> <?php echo $parent_params['name']; ?>
+					<i class='<?php echo $parent_params['icon']; ?>'></i> <span><?php echo $parent_params['name']; ?></span>
 				</a>
 			</li>
 
@@ -22,7 +22,6 @@
 			<?php
 				if(preg_match('/'.$module.'\/(.*?)\/'.$ctrler.'/', $_SERVER['REQUEST_URI'],$match)==1){
 					$parent_active=($parent_params['url']==$match[1]);
-
 				}else{
 					$parent_active = ($ctrler==$parent);
 				}
@@ -37,7 +36,7 @@
 						<?php if ( empty($page_auth[$url]) || $this->ion_auth->in_group($page_auth[$url]) ): ?>
 						<?php $child_active = ($current_uri==$url); ?>
 						<li <?php if ($child_active) echo 'class="active"'; ?>>
-							<a href='<?php echo $url; ?>'><i class='fa fa-circle-o'></i> <?php echo $name; ?></a>
+							<a href='<?php echo $url; ?>'><i class='fa fa-circle-o'></i><?php echo $name; ?></a>
 						</li>
 						<?php endif; ?>
 					<?php endforeach; ?>
@@ -50,12 +49,12 @@
 	<?php endforeach; ?>
 	
 	<?php if ( !empty($useful_links) ): ?>
-		<li class="header">USEFUL LINKS</li>
+		<li class="header"><span>USEFUL LINKS</span></li>
 		<?php foreach ($useful_links as $link): ?>
 			<?php if ($this->ion_auth->in_group($link['auth']) ): ?>
 			<li>
 				<a href="<?php echo starts_with($link['url'], 'http') ? $link['url'] : base_url($link['url']); ?>" target='<?php echo $link['target']; ?>'>
-					<i class="fa fa-circle-o <?php echo $link['color']; ?>"></i> <?php echo $link['name']; ?>
+					<i class="fa fa-circle-o <?php echo $link['color']; ?>"></i> <span><?php echo $link['name']; ?></span>
 				</a>
 			</li>
 			<?php endif; ?>

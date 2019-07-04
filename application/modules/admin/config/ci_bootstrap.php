@@ -65,18 +65,20 @@ $config['ci_bootstrap'] = array(
 			'url'		=> '',
 			'icon'		=> 'fa fa-home',
 		),
-		'school' => array(
-			'name'		=> 'School',
-			'url'		=> 'schools',
+		'demo' => array(
+			'name'		=> 'Demos',
+			'url'		=> 'demos',
 			'icon'		=> 'fa fa-bank',
 			'children'  => array(
-				'School'			=> 'school',
-				'Faculty'		=> 'schools/faculty',
-				'Department'	=> 'schools/department',
-				'Course'	=>'schools/course',
-				'Gen PDF'	=>'school/gen_pdf',
-				'Import'	=>'school/import',
-				'Mailer'	=>'school/mailer'
+				'Faculty'		=> 'demos/faculty',
+				'Department'	=> 'demos/department',
+				'Course'	=>'demos/course',
+				'Gen PDF'	=>'demos/tool/gen_pdf',
+				'Import'	=>'demos/tool/import',
+				'Mailer'	=>'demos/tool/mailer',
+				'SMS'		=>'demos/tool/sms',
+				'Products'		=>'demos/product/',
+				'Shopping Cart'		=>'demos/product/cart'
 			)
 		),
 		'user' => array(

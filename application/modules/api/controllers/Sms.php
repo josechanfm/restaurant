@@ -9,13 +9,12 @@ class Sms extends MY_Controller {
 		if(hash('crc32','123456'.$key,false)==$_POST['secret_key']){
 			$recipients=preg_split("/(,|;)/",$_POST['recipient']);
 			$content=$_POST['content'];
-			$this->send_sms($recipients,$recipients);//
+			//$this->send_sms($recipients,$recipients);//
 			redirect($_SERVER["HTTP_REFERER"]);
 		}else{
 			echo 'Secret key incorrect!';
 			echo 'Please contact your system administrator';
 		}
-
 	}
 
 	function send_sms($recipients,$content){

@@ -1,5 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+//if delete this demo, also delete the folowing files
+// /assets/dist/admin/jquery.mycart.js
+// /assets/dist/admin/jquery.mycart.min.js
+// /prodct/*
 
 class Product extends Admin_Controller {
 	public function __construct()
@@ -24,7 +28,7 @@ class Product extends Admin_Controller {
 		$this->mViewData['products'] = $this->db->select('*')
 							->from('products')
 							->get()->result_array();
-		$this->render('cart');
+		$this->render('demos/cart');
 	}
 
 	public function add(){
