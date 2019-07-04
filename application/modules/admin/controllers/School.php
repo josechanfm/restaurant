@@ -28,18 +28,6 @@ class School extends Admin_Controller {
 			array('campus'=>'Main Campus')
 		);
 	}
-/*	
-	public function send_email(){
-		$this->load->library('my_email','email');
-		$this->email->send_email_template(
-			'josechan@ipm.edu.mo',
-			'josechan',
-			'test',
-			'general',
-			array('full_name'=>'jose chan')
-		);
-	}
-*/
 	public function mailer(){
 		$this->add_script('https://www.google.com/recaptcha/api.js',true,'head');
 		$this->load->library('form_builder');

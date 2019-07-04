@@ -45,6 +45,7 @@ class MY_Controller extends MX_Controller {
 	protected $mUserMainGroup;
 
 	//Jose defined veriables
+	protected $mExtraElement=array(); //can be "script" or any other element
 	protected $mGridTitle = '';
 	protected $mGridHeader='';
 	protected $mBackButton = '';
@@ -193,6 +194,10 @@ class MY_Controller extends MX_Controller {
 		else
 			$this->mStylesheets[$media] = array_merge($files, $this->mStylesheets[$media]);
 	}
+	//Create by jose
+	protected function add_extra_element($element,$type='script'){
+		$this->mExtraElement[$type]=$element;
+	}
 
 	// Render template
 	protected function render($view_file, $layout = 'default')
@@ -227,6 +232,7 @@ class MY_Controller extends MX_Controller {
 		$this->mViewData['body_class'] = $this->mBodyClass;
 
 		//Jose define extra variables
+		$this->mViewData['extra_element'] = $this->mExtraElement;
 		$this->mViewData['grid_title'] = $this->mGridTitle;
 		$this->mViewData['grid_header'] = $this->mGridHeader;
 		$this->mViewData['back_button'] = $this->mBackButton;

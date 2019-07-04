@@ -1,5 +1,14 @@
 <?php if ( !empty($crud_note) ) echo "<p>$crud_note</p>"; ?>
+<?php
+if(!empty($extra_element)){
+	if(is_array($extra_element)){
+		echo $extra_element['script'];
+	}else{
+		echo $extra_element;
+	}
+}
 
+?>
 <!-- Create by Jose-->
 <div class="row">
 	<div class="col-md-10">
