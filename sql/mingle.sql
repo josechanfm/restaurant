@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 03, 2019 at 06:59 AM
+-- Generation Time: Jul 04, 2019 at 10:42 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.5.38
 
@@ -84,7 +84,7 @@ CREATE TABLE `admin_users` (
 --
 
 INSERT INTO `admin_users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`) VALUES
-(1, '127.0.0.1', 'webmaster', '$2y$08$/X5gzWjesYi78GqeAv5tA.dVGBVP7C1e1PzqnYCVe5s1qhlDIPPES', NULL, NULL, NULL, NULL, NULL, NULL, 1451900190, 1562118716, 1, 'Webmaster', ''),
+(1, '127.0.0.1', 'webmaster', '$2y$08$/X5gzWjesYi78GqeAv5tA.dVGBVP7C1e1PzqnYCVe5s1qhlDIPPES', NULL, NULL, NULL, NULL, NULL, NULL, 1451900190, 1562137413, 1, 'Webmaster', ''),
 (2, '127.0.0.1', 'admin', '$2y$08$7Bkco6JXtC3Hu6g9ngLZDuHsFLvT7cyAxiz1FzxlX5vwccvRT7nKW', NULL, NULL, NULL, NULL, NULL, NULL, 1451900228, 1465489580, 1, 'Admin', ''),
 (3, '127.0.0.1', 'manager', '$2y$08$snzIJdFXvg/rSHe0SndIAuvZyjktkjUxBXkrrGdkPy1K6r5r/dMLa', NULL, NULL, NULL, NULL, NULL, NULL, 1451900430, 1465489585, 1, 'Manager', ''),
 (4, '127.0.0.1', 'staff', '$2y$08$NigAXjN23CRKllqe3KmjYuWXD5iSRPY812SijlhGeKfkrMKde9da6', NULL, NULL, NULL, NULL, NULL, NULL, 1451900439, 1465489590, 1, 'Staff', '');
@@ -221,7 +221,8 @@ CREATE TABLE `departments` (
 
 INSERT INTO `departments` (`id`, `faculty_id`, `name`) VALUES
 (1, 1, 'Computing Study'),
-(2, 1, 'Public Administrative');
+(2, 1, 'Public Administrative'),
+(3, 2, 'Nursing program');
 
 -- --------------------------------------------------------
 
@@ -281,6 +282,59 @@ CREATE TABLE `login_attempts` (
   `login` varchar(100) NOT NULL,
   `time` int(11) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `products`
+--
+
+CREATE TABLE `products` (
+  `id` int(11) NOT NULL,
+  `category` varchar(20) COLLATE utf8_bin NOT NULL,
+  `sub_category` varchar(50) COLLATE utf8_bin NOT NULL,
+  `barcode` varchar(20) COLLATE utf8_bin NOT NULL,
+  `brand` varchar(50) COLLATE utf8_bin NOT NULL,
+  `name` tinytext COLLATE utf8_bin NOT NULL,
+  `origin` varchar(20) COLLATE utf8_bin NOT NULL,
+  `packing` varchar(20) COLLATE utf8_bin NOT NULL,
+  `volume` int(11) NOT NULL,
+  `unit` varchar(6) COLLATE utf8_bin NOT NULL,
+  `image` varchar(20) COLLATE utf8_bin NOT NULL,
+  `description` text COLLATE utf8_bin,
+  `dealer_price` int(11) NOT NULL,
+  `sales_price` varchar(20) COLLATE utf8_bin NOT NULL,
+  `trade` varchar(20) COLLATE utf8_bin NOT NULL,
+  `remarks` text COLLATE utf8_bin
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `category`, `sub_category`, `barcode`, `brand`, `name`, `origin`, `packing`, `volume`, `unit`, `image`, `description`, `dealer_price`, `sales_price`, `trade`, `remarks`) VALUES
+(1, '1', '11', '8809470122234', 'Mediheal\n美迪惠尔', '(27ml×10)美迪惠尔水润保湿面膜-升级版带logo（完税版）', '韩国', '50盒/件', 50, '盒', 'image001.png', '“在韩国，每三秒钟卖出一盒。MEDIHEAL美迪惠尔是韩国L&P(株)化妆品旗下护肤品牌。MEADIHEAL美迪惠尔一直延续“安全、温和、舒适”的品牌理念，全线产品均通过严格的皮肤科安全测试，旨在让大家毫无顾虑的享受肌肤的美丽蜕变。”      常规爆款系列，堆头促销明星系列，且适宜长期堆头，且品牌的筛选在精不在多，能极大程度上起到带动效果。', 64, '220', '一般贸易', NULL),
+(2, '1', '11', '8809127535370', 'Merbliss\n茉贝丽思', '（25g*5片）Merbliss茉贝丽思 婚纱补水面膜（完税版）', '韩国', '100盒/件', 100, '盒', 'image003.png', '“韩国热卖，准新娘面膜，号称一片立即改善肌肤，在你人生中非常重要的日子给你非常好的状态；面膜厚度仅有0.21毫米，能够吸收达到面膜重量的10倍精华，而精华含量25毫克，相当于一瓶精华素，各大美妆博主强势推荐。”', 40, '89', '一般贸易', NULL),
+(3, '1', '11', '8809127534854', 'NeFactory 秘法特丽', '（3g*0.2g*3g*5片）秘法特丽猪鼻贴三部曲（完税版）', '韩国', '100盒/件', 100, '盒', 'image005.png', '“韩国人气鼻贴，低刺激，含有猪皮胶原蛋白，紧贴面部线条的同时，能够滋养瓶皮肤，为干燥的肌肤表层提供充分水分，使之恢复弹性。”', 38, '88', '一般贸易', NULL),
+(4, '1', '12', '83078002084', 'Carmex    小蜜媞 ', '10g 小蜜媞 修护唇膏（管装）(完税版)', '美国', '12支/中盒\n 30中盒/件', 360, '支', 'image007.png', '“美国PharmacyTimesmagazine的年度最佳护唇圣品，消费者心目中的最佳唇部保养品牌之一。在美上市后长达60多年的销售传奇，全世界平均每分钟可卖出100个，至今全球累积销量已达75亿支。是好莱坞明星的最爱、网络询问度最高、销售No. 1的护唇膏!”                 常规爆款季节商品，，细分品类在精不在多，唇膏系列明细商品。', 16, '38.9', '一般贸易', NULL),
+(5, '1', '12', '83078002053', 'Carmex    小蜜媞 ', '7.5g 小蜜媞 修护唇膏（盒装）(完税版)', '美国', '12盒/中盒 \n30中盒/件', 360, '盒', 'image009.png', '“美国PharmacyTimesmagazine的年度最佳护唇圣品，消费者心目中的最佳唇部保养品牌之一。在美上市后长达60多年的销售传奇，全世界平均每分钟可卖出100个，至今全球累积销量已达75亿支。是好莱坞明星的最爱、网络询问度最高、销售No. 1的护唇膏!”                 常规爆款季节商品，，细分品类在精不在多，唇膏系列明细商品。', 16, '38.9', '一般贸易', NULL),
+(6, '1', '11', '8809381691423', ' Rainbow  莱妃尔', '（25ml×10）Rainbow莱妃尔熊猫莹润面膜（完税版）', '韩国', '50盒/件 ', 50, '盒', 'image011.png', '“经典动物面膜”，进口品渠道必卖系列。“熊猫、老虎、羊羊、美猴王”。莱妃尔作为面膜专业工厂起步以来，通过不断的研发，最终研制出国际上最先的3step面膜，努力成为韩国国内第一的面膜生产供应商。”                   常规爆款系列，堆头促销明星系列，且适宜长期堆头，且零售端利润空间客观，知名品牌却能保有一定利润空间和差异化。', 56, '180', '一般贸易', NULL),
+(7, '1', '11', '8809381691447', ' Rainbow  莱妃尔', '（25ml×10）Rainbow莱妃尔羊羊保湿紧致面膜（完税版）', '韩国', '50盒/件 ', 50, '盒', 'image013.png', '“经典动物面膜”，进口品渠道必卖系列。“熊猫、老虎、羊羊、美猴王”。莱妃尔作为面膜专业工厂起步以来，通过不断的研发，最终研制出国际上最先的3step面膜，努力成为韩国国内第一的面膜生产供应商。”                   常规爆款系列，堆头促销明星系列，且适宜长期堆头，且零售端利润空间客观，知名品牌却能保有一定利润空间和差异化。', 56, '180', '一般贸易', NULL),
+(8, '1', '11', '8809381691430', ' Rainbow  莱妃尔', '（25ml×10）Rainbow莱妃尔老虎抗皱面膜（完税版）', '韩国', '50盒/件 ', 50, '盒', 'image015.png', '“经典动物面膜”，进口品渠道必卖系列。“熊猫、老虎、羊羊、美猴王”。莱妃尔作为面膜专业工厂起步以来，通过不断的研发，最终研制出国际上最先的3step面膜，努力成为韩国国内第一的面膜生产供应商。”                   常规爆款系列，堆头促销明星系列，且适宜长期堆头，且零售端利润空间客观，知名品牌却能保有一定利润空间和差异化。', 56, '180', '一般贸易', NULL),
+(9, '1', '11', '8809381691454', ' Rainbow  莱妃尔', '（25ml×10）Rainbow莱妃尔美猴王舒缓保湿面膜（完税版）', '韩国', '50盒/件', 50, '盒', 'image017.png', '“经典动物面膜”，进口品渠道必卖系列。“熊猫、老虎、羊羊、美猴王”。莱妃尔作为面膜专业工厂起步以来，通过不断的研发，最终研制出国际上最先的3step面膜，努力成为韩国国内第一的面膜生产供应商。”                   常规爆款系列，堆头促销明星系列，且适宜长期堆头，且零售端利润空间客观，知名品牌却能保有一定利润空间和差异化。', 56, '180', '一般贸易', NULL),
+(10, '1', '11', '8809381690426', ' Rainbow  莱妃尔', '（25ml×10）Rainbow莱妃尔三部曲保湿紧致面膜（完税版）', '韩国', '30盒/件 ', 30, '盒', 'image019.png', '“彩虹三部曲”，三部曲面膜鼻祖。“卸妆、洁面、面膜护肤”，莱妃尔作为面膜专业工厂起步以来，通过不断的研发，最终研制出国际上最先的3step面膜，努力成为韩国国内第一的面膜生产供应商。”                   常规爆款系列，堆头促销明星系列，且适宜长期堆头，且零售端利润空间客观，知名品牌却能保有一定利润空间和差异化。', 49, '160', '一般贸易', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sms_users`
+--
+
+CREATE TABLE `sms_users` (
+  `id` int(11) DEFAULT NULL,
+  `admin_user_id` int(11) NOT NULL,
+  `active` tinyint(1) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
 
@@ -417,6 +471,12 @@ ALTER TABLE `login_attempts`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -481,7 +541,7 @@ ALTER TABLE `courses`
 -- AUTO_INCREMENT for table `departments`
 --
 ALTER TABLE `departments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `faculties`
 --
@@ -497,6 +557,11 @@ ALTER TABLE `groups`
 --
 ALTER TABLE `login_attempts`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `users`
 --
