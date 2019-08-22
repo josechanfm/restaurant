@@ -3,7 +3,8 @@ var app=new Vue({
 	data:{
 		message:"Hello world!",
 		products:[],
-		members:[]
+		members:[],
+		alertMessage:""
 	},
 	created(){
 		axios.get("demos/vue/get_all_products")
@@ -16,8 +17,19 @@ var app=new Vue({
 		//console.log(this.message);
 	},
 	methods:{
+		doSomething(){
+			this.alertMessage="Something was done!";
+		}
 	},
 	watch:{
+		alertMessage(){
+			alert(this.alertMessage);
+		}
+	},
+	computed:{
+		somethingDone:function(){
+			return this.alertMessage;
+		}
 	}
 });
 

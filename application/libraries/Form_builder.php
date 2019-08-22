@@ -145,7 +145,7 @@ class Form {
 	// Textarea field
 	public function field_textarea($name, $value = NULL, $extra = array())
 	{
-		$data = array('id' => $name, 'name' => $name);
+		$data = array('id' => $name, 'name' => $name,'class'=>'texteditor');
 		$value = ($value===NULL) ? $this->get_field_value($name) : $value;
 		return form_textarea($data, $value, $extra);
 	}
