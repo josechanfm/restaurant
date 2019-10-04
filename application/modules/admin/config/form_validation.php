@@ -9,7 +9,7 @@
 $config = array(
 
 	// school mailer
-	'school/mailer' => array(
+	'tool/mailer' => array(
 		array(
 			'field'		=> 'sender_email',
 			'label'		=> 'Sender Email',

@@ -9,12 +9,12 @@ $config = array(
 	// school mailer
 	'home/mailer' => array(
 		array(
-			'field'		=> 'sender_email',
-			'label'		=> 'Sender Email',
+			'field'		=> 'vacancy_id',
+			'label'		=> '開考編號<br>No. de recrutamento',
 			'rules'		=> 'required',
 		),
 		array(
-			'field'		=> 'reciever_email',
+			'field'		=> 'vacancy_edu',
 			'label'		=> 'Reciever Email',
 			'rules'		=> 'required',
 		),

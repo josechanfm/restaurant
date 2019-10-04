@@ -33,7 +33,7 @@ class Tool extends Admin_Controller {
 		);
 	}
 	public function mailer(){
-		$this->add_script('https://www.google.com/recaptcha/api.js',true,'head');
+		//$this->add_script('https://www.google.com/recaptcha/api.js',true,'head');
 		$this->load->library('form_builder');
 		$this->load->library('my_email','email');
 		$form = $this->form_builder->create_form();
@@ -43,7 +43,7 @@ class Tool extends Admin_Controller {
 				$this->input->post('reciever_email'),
 				$this->input->post('reciever_name'),
 				$this->input->post('subject'),
-				'schools/notice',
+				'demos/notice',
 				array(
 					'sender_email'=>$this->input->post('sender_email'),
 					'sender_name'=>$this->input->post('sender_name'),

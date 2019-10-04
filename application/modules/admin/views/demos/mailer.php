@@ -16,7 +16,7 @@
 					<?php echo $form->bs3_text('Reciever name', 'reciever_name'); ?>
 					<?php echo $form->bs3_text('Subject', 'subject'); ?>
 					<?php echo $form->bs3_textarea('Message', 'message'); ?>
-					<?php echo $form->bs3_recaptcha('Captcha', 'captcha'); ?>
+					<?php //echo $form->bs3_recaptcha('Captcha', 'captcha'); ?>
 					<?php echo $form->bs3_submit(); ?>
 					
 				<?php echo $form->close(); ?>

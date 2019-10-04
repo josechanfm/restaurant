@@ -126,6 +126,7 @@ class Form {
 		return form_input($data, $value, $extra);
 	}
 
+
 	// Input field (type = email)
 	public function field_email($name = 'email', $value = NULL, $extra = array())
 	{
@@ -153,7 +154,7 @@ class Form {
 	// Upload field
 	public function field_upload($name, $value = NULL, $extra = array())
 	{
-		$data = array('id' => $name, 'name' => $name);
+		$data = array('id' => str_replace('[]','',$name), 'name' => $name);
 		$value = ($value===NULL) ? $this->get_field_value($name) : $value;
 		return form_upload($data, $value, $extra);
 	}
@@ -174,11 +175,12 @@ class Form {
 
 /* add by Jose (start)*/
 	// Radio field
-	public function field_radio($name, $options = array(), $checked='', $extra = array())
+	public function field_radio($name, $options = array(), $checked='', $extra = array(),$horizontal=TRUE)
 	{
 		$str='<div class="radio-group">';
 		foreach($options as $key=>$value){
-			$str.='<div class="radio-item">'.form_radio($name,$key,$key==$checked?TRUE:FALSE) .$value.'</div>';
+			$str.=($horizontal?'<div class="radio-inline">':'<div class="radio-item">');
+			$str.=form_radio($name,$key,$key==$checked?TRUE:FALSE) .$value.'</div>';
 			
 		}
 		return $str.'</div>';
@@ -193,6 +195,19 @@ class Form {
 		}
 		return $str.'</div>';
 	}
+
+	public function field_date($name, $value = NULL, $extra = array())
+	{
+		$data = array('type' => 'text', 'id' => $name, 'name' => $name);
+		$extra=array(
+			'type'=>'date',
+			'name'=>$name,
+			'value'=>$value
+		);
+		$value = ($value===NULL) ? $this->get_field_value($name) : $value;
+		return form_input($name, $value, $extra);
+	}
+
 /* add by Jose (end) */
 
 	/**
@@ -227,6 +242,7 @@ class Form {
 	 */
 	public function bs3_text($label, $name, $value = NULL, $extra = array())
 	{
+		
 		$extra['class'] = 'form-control';
 		return '<div class="form-group">'.form_label($label, $name).$this->field_text($name, $value, $extra).'</div>';
 	}
@@ -256,28 +272,41 @@ class Form {
 		return '<div class="form-group">'.form_label($label, $name).$this->field_dropdown($name, $options, $selected, $extra).'</div>';
 	}
 
-	public function bs3_radio($label, $name, $options = array(), $checked=FALSE, $extra = array())
+	public function bs3_radio($label, $name, $options = array(), $checked=FALSE, $extra = array(), $horizontal=TRUE)
 	{
 		$extra['class'] = 'form-control';
-		return '<div class="form-group">'.form_label($label, $name).$this->field_radio($name, $options, $checked, $extra).'</div>';
+		return '<div class="form-group">'.form_label($label, $name).$this->field_radio($name, $options, $checked, $extra,$horizontal).'</div>';
 	}
 
-	public function bs3_checkbox($label, $name, $options = array(), $checked=FALSE, $extra = array())
+	public function bs3_checkbox($label, $name, $options = array(), $checked=array(), $extra = array())
 	{
 		$extra['class'] = 'form-control';
 		return '<div class="form-group">'.form_label($label, $name).$this->field_checkbox($name, $options, $checked, $extra).'</div>';
 	}
 
-	public function bs3_date($label, $name, $value = NULL, $extra = array())
+	public function bs3_date($label, $name, $value = NULL, $extra = array(),$format='dd-mm-yyyy')
 	{
-	$script='<script>	$(function(){//Date picker
-	    $("#dob").datepicker({autoclose: true
+		$view='';
+		switch ($format) {
+			case 'mm-yyyy':
+				$view=' ,minViewMode:"months"';
+				break;
+			default:
+				# code...
+				break;
+		};
+		if(!is_array($extra)) $extra=array();
+		$extra['class'] = 'form-control';
+		$script='<script>	$(function(){//Date picker
+	    $("#'.$name.'").datepicker({autoclose: true, format:"'.$format.'"'.$view.' 
 	    }) });</script>';
 
-
+		//$extra['id'] = 'datepicker';
+		return '<div class="form-group">'.form_label($label, $name).'<div class="input-group date"><div class="input-group-addon"><i class="fa fa-calendar"></i></div>'.$this->field_text($name, $value, $extra).'</div></div>'.$script;
+	}
+	public function bs3_upload($label, $name, $value = NULL, $extra = array()){
 		$extra['class'] = 'form-control';
-		$extra['id'] = 'datepicker';
-		return '<div class="form-group">'.form_label($label, $name).'<div class="input-group date"><div class="input-group-addon"><i class="fa fa-calendar"></i></div>'.$this->field_text($name, $value, $extra).'</div></div></div>'.$script;
+		return '<div class="form-group">'.form_label($label, $name).$this->field_upload($name, $value = NULL, $extra).'</div>';
 	}
 
 	public function bs3_recaptcha($label,$name)
