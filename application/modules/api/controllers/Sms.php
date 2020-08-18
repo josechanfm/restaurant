@@ -3,18 +3,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Sms extends MY_Controller {
 
-	public function send()
-	{
-		$key=date('Y-m-d');
-		if(hash('crc32','123456'.$key,false)==$_POST['secret_key']){
-			$recipients=preg_split("/(,|;)/",$_POST['recipient']);
-			$content=$_POST['content'];
-			//$this->send_sms($recipients,$recipients);//
-			redirect($_SERVER["HTTP_REFERER"]);
-		}else{
-			echo 'Secret key incorrect!';
-			echo 'Please contact your system administrator';
-		}
+	// public function send2()
+	// {
+	// 	$key=date('Y-m-d');
+	// 	if(hash('crc32','123456'.$key,false)==$_POST['secret_key']){
+	// 		$recipients=preg_split("/(,|;)/",$_POST['recipient']);
+	// 		$content=$_POST['content'];
+	// 		//$this->send_sms($recipients,$recipients);//
+	// 		redirect($_SERVER["HTTP_REFERER"]);
+	// 	}else{
+	// 		echo 'Secret key incorrect!';
+	// 		echo 'Please contact your system administrator';
+	// 	}
+	// }
+	public function send(){
+		//echo json_encode($_POST);
+		$this->send_sms($_POST['recipient'],$_POST['content']);
 	}
 
 	function send_sms($recipients,$content){
@@ -65,7 +69,7 @@ class Sms extends MY_Controller {
 		  $httpBody = $sms_xml."\r\n";
 		  // send the request headers:
 		  fputs($fp, $httpHeader.$httpBody);
-
+		  echo $fp;
 		  $result = '';
 		  while(!feof($fp)) {
 		    // receive the results of the request
@@ -78,7 +82,7 @@ class Sms extends MY_Controller {
 		// close the socket connection:
 		fclose($fp);
 		// split the result header from the content
-		// echo $result;
+		echo $result;
 		// $result = explode("\r\n\r\n", $result, 2);
 
 		// $header = isset($result[0]) ? $result[0] : '';
