@@ -43,7 +43,7 @@ class Gc_dependent_select_model extends MY_Model {
 			'config'=>array(
 				'main_table'=>'courses',
 				'main_table_primary'=>'id',
-				'url'=>'admin/schools/course/index/'
+				'url'=>'admin/demos/course/index/'
 			)
 		);
 

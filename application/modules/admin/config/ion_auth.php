@@ -11,7 +11,7 @@
  * 	- $config['site_title'] = "Admin Panel"; (default: 'Example.com')
  * 	- $config['default_group'] = 'admin'; (default: 'members')
  * 	- $config['identity'] = 'username'; (default: 'email')
- * 	- $config['email_templates'] = 'email/auth/'; (default: 'auth/email/')
+ * 	- $config['email_templates'] = 'email/auth/'; (default: 'auth/email/'\)
  * 	- $config['email_activate']	= 'activate.php'; (default: 'activate.tpl.php')
  * 	- $config['email_forgot_password'] = 'forgot_password.php'; (default: 'forgot_password.tpl.php')
  * 	- $config['email_forgot_password_complete']	= 'new_password.php'; (default: new_password.tpl.php)

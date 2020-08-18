@@ -27,8 +27,8 @@
 
 <script>
 	$(document).ready(function() {
-		app.products=<?=json_encode($products)?>;
-		app.members=<?=json_encode($members)?>;
+		//app.products=<?=json_encode($products)?>;
+		//app.members=<?=json_encode($members)?>;
 	});
 
 </script>

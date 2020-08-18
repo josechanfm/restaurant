@@ -146,7 +146,7 @@ class Form {
 	// Textarea field
 	public function field_textarea($name, $value = NULL, $extra = array())
 	{
-		$data = array('id' => $name, 'name' => $name,'class'=>'texteditor');
+		$data = array('id' => $name, 'name' => $name,'class'=>'texteditor','style'=>'width:100%');
 		$value = ($value===NULL) ? $this->get_field_value($name) : $value;
 		return form_textarea($data, $value, $extra);
 	}
@@ -262,7 +262,7 @@ class Form {
 	public function bs3_textarea($label, $name, $value = NULL, $extra = array())
 	{
 		$extra['class'] = 'form-control';
-		return '<div class="form-group">'.form_label($label, $name).$this->field_textarea($name, $value, $extra).'</div>';
+		return '<div class="form-group">'.form_label($label, $name).'<br>'.$this->field_textarea($name, $value, $extra).'</div>';
 	}
 
 /* add by Jose (start)*/
