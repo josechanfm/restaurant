@@ -45,6 +45,8 @@ $config['ci_bootstrap'] = array(
 			'assets/api/lib/jsoneditor.min.js',
 			'assets/api/lib/marked.js',
 			'assets/api/lib/swagger-oauth.js',
+
+
 			
 			// Some basic translations (uncomment translator.js and a language when needed)
 			//'assets/api/lang/translator.js',

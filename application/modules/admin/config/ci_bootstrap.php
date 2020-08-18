@@ -34,9 +34,27 @@ $config['ci_bootstrap'] = array(
 	// Default scripts to embed at page head or end
 	'scripts' => array(
 		'head'	=> array(
-			'assets/dist/admin/adminlte.min.js',
+/*			'assets/dist/admin/adminlte.min.js',
+			'assets/dist/admin/lib.min.js',
+			'assets/dist/admin/app.min.js'*/
+			'assets/api/plugins/jquery/jquery.min.js',
+			'assets/api/plugins/jquery-ui/jquery-ui.min.js',
+
+			'assets/api/plugins/bootstrap/js/bootstrap.bundle.min.js',
+			'assets/api/plugins/chart.js/Chart.min.js',
+			'assets/api/plugins/sparklines/sparkline.js',
+			'assets/api/plugins/jqvmap/jquery.vmap.min.js',
+			'assets/api/plugins/jqvmap/maps/jquery.vmap.usa.js',
+			'assets/api/plugins/jquery-knob/jquery.knob.min.js',
+			'assets/api/plugins/moment/moment.min.js',
+			'assets/api/plugins/daterangepicker/daterangepicker.js',
+			'assets/api/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js',
+			'assets/api/plugins/summernote/summernote-bs4.min.js',
+			'assets/api/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js',
+			'assets/dist/admin/bootstrap4/js/adminlte.min.js',
 			'assets/dist/admin/lib.min.js',
 			'assets/dist/admin/app.min.js'
+
 		),
 		'foot'	=> array(
 		),
@@ -45,7 +63,18 @@ $config['ci_bootstrap'] = array(
 	// Default stylesheets to embed at page head
 	'stylesheets' => array(
 		'screen' => array(
-			'assets/dist/admin/adminlte.min.css',
+			/*'assets/dist/admin/adminlte.min.css',
+			'assets/dist/admin/lib.min.css',
+			'assets/dist/admin/app.min.css'*/
+
+			'assets/api/plugins/fontawesome-free/css/all.min.css',
+			'assets/api/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css',
+			'assets/api/plugins/icheck-bootstrap/icheck-bootstrap.min.css',
+			'assets/api/plugins/jqvmap/jqvmap.min.css',
+			'assets/dist/admin/bootstrap4/css/adminlte.min.css',
+			'assets/api/plugins/overlayScrollbars/css/OverlayScrollbars.min.css',
+			'assets/api/plugins/daterangepicker/daterangepicker.css',
+			'assets/api/plugins/summernote/summernote-bs4.css',
 			'assets/dist/admin/lib.min.css',
 			'assets/dist/admin/app.min.css'
 		)

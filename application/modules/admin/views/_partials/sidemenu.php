@@ -1,6 +1,9 @@
-<ul class="sidebar-menu">
+<!-- Main Sidebar Container -->
 
-	<li class="header">MAIN NAVIGATION</li>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
 	<?php foreach ($menu as $parent => $parent_params): ?>
 
@@ -8,11 +11,12 @@
 		<?php if ( empty($parent_params['children']) ): ?>
 
 			<?php $active = ($current_uri==$parent_params['url'] || $ctrler==$parent); ?>
-			<li class='<?php if ($active) echo 'active'; ?>'>
-				<a href='<?php echo $parent_params['url']; ?>'>
-					<i class='<?php echo $parent_params['icon']; ?>'></i> <span><?php echo $parent_params['name']; ?></span>
-				</a>
-			</li>
+		      <li class='nav-item <?php if ($active) echo 'menu-open'; ?>'>
+		        <a class="nav-link <?php if ($active) echo 'active'; ?>" href='<?php echo $parent_params['url']; ?>'>
+		          <i class='nav-icon <?php echo $parent_params['icon']; ?>'></i> 
+		          <p><?php echo $parent_params['name']; ?></p>
+		        </a>
+		      </li>
 
 		<?php else: ?>
 
@@ -27,17 +31,23 @@
 				}
 			?>
 <!-- Added by jose end-->
-			<li class='treeview <?php if ($parent_active) echo 'active'; ?>'>
-				<a href='#'>
-					<i class='<?php echo $parent_params['icon']; ?>'></i> <span><?php echo $parent_params['name']; ?></span> <span class="pull-right-container"><i class='fa fa-angle-left pull-right'></i></span>
+			<li class='nav-item has-treeview <?php if ($parent_active) echo 'menu-open'; ?>'>
+				<a href='#' class="nav-link <?php if ($parent_active) echo 'active'; ?>">
+			        <i class='nav-icon <?php echo $parent_params['icon']; ?>'></i> 
+			        <p><?php echo $parent_params['name']; ?>
+		            	<i class="right fas fa-angle-left"></i>
+		          	</p>
 				</a>
-				<ul class='treeview-menu'>
+				<ul class='nav nav-treeview'>
 					<?php foreach ($parent_params['children'] as $name => $url): ?>
 						<?php if ( empty($page_auth[$url]) || $this->ion_auth->in_group($page_auth[$url]) ): ?>
 						<?php $child_active = ($current_uri==$url); ?>
-						<li <?php if ($child_active) echo 'class="active"'; ?>>
-							<a href='<?php echo $url; ?>'><i class='fa fa-circle-o'></i><?php echo $name; ?></a>
-						</li>
+			            <li class='nav-item'>
+			              <a href='<?php echo $url; ?>' class='nav-link <?php if ($child_active) echo 'active'; ?>'>
+			                <i class='nav-icon far fa-circle'></i>
+			                <p><?php echo $name; ?></p>
+			              </a>
+			            </li>
 						<?php endif; ?>
 					<?php endforeach; ?>
 				</ul>
@@ -52,9 +62,10 @@
 		<li class="header"><span>USEFUL LINKS</span></li>
 		<?php foreach ($useful_links as $link): ?>
 			<?php if ($this->ion_auth->in_group($link['auth']) ): ?>
-			<li>
-				<a href="<?php echo starts_with($link['url'], 'http') ? $link['url'] : base_url($link['url']); ?>" target='<?php echo $link['target']; ?>'>
-					<i class="fa fa-circle-o <?php echo $link['color']; ?>"></i> <span><?php echo $link['name']; ?></span>
+			<li class="nav-item">
+				<a href="<?php echo starts_with($link['url'], 'http') ? $link['url'] : base_url($link['url']); ?>" target='<?php echo $link['target']; ?>' class="nav-link">
+					<i class="fa fa-circle-o <?php echo $link['color']; ?>"></i> 
+					<p class="text"><?php echo $link['name']; ?></p>
 				</a>
 			</li>
 			<?php endif; ?>
@@ -62,3 +73,21 @@
 	<?php endif; ?>
 
 </ul>
+
+</nav>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
