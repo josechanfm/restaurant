@@ -85,6 +85,7 @@ $config['ci_bootstrap'] = array(
 	
 	// Multilingual settings
 	'languages' => array(
+		
 	),
 
 	// Menu items

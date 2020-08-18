@@ -3,11 +3,11 @@
 <div class="row">
 
 	<div class="col-md-6">
-		<div class="box box-primary">
-			<div class="box-header">
-				<h3 class="box-title">Reset Password for Admin User: </h3>
+		<div class="card card-primary">
+			<div class="card-header">
+				<h3 class="card-title">Reset Password for Admin User: </h3>
 			</div>
-			<div class="box-body">
+			<div class="card-body">
 				<?php echo $form->open(); ?>
 					<table class="table table-bordered">
 						<tr>

@@ -53,7 +53,7 @@ class Sortable {
 		}
 		else
 		{
-			$html = modules::run('adminlte/widget/box_open', 'Sort Order', 'primary');
+			$html = modules::run('adminlte/widget/card_open', 'Sort Order', 'primary');
 
 			// Render form with alert message
 			$html.= '<form action="'.current_full_url().'" method="POST">';
@@ -77,7 +77,7 @@ class Sortable {
 
 			$html.= modules::run('adminlte/widget/btn_submit', 'Save');
 			$html.= '</form>';
-			$html.= modules::run('adminlte/widget/box_close');
+			$html.= modules::run('adminlte/widget/card_close');
 			return $html;
 		}
 	}

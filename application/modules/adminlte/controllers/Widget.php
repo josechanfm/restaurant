@@ -41,34 +41,34 @@ class Widget extends MX_Controller {
 		$this->load->view('widget/app_btn', $data);
 	}
 
-	function box($title, $body, $style = 'primary', $solid = FALSE, $footer = '')
+	function card($title, $body, $style = 'primary',$outline=FALSE,  $footer = '')
 	{
 		$data = array(
 			'title'		=> $title,
-			'style'		=> empty($style) ? '' : 'box-'.$style,
-			'solid'		=> $solid ? 'box-solid' : '',
+			'style'		=> empty($style) ? '' : 'card-'.$style,
+			'outline'	=> $outline? 'card-outline':'',
 			'body'		=> $body,
 			'footer'	=> $footer,
 		);
-		$this->load->view('widget/box', $data);
+		$this->load->view('widget/card', $data);
 	}
 
-	function box_open($title, $style = 'primary', $solid = FALSE)
+	function card_open($title, $style = 'primary', $outline = FALSE)
 	{
 		$data = array(
 			'title'		=> $title,
-			'style'		=> empty($style) ? '' : 'box-'.$style,
-			'solid'		=> $solid ? 'box-solid' : '',
+			'style'		=> empty($style) ? '' : 'card-'.$style,
+			'outline'		=> $outline ? 'card-outline' : '',
 		);
-		$this->load->view('widget/box_open', $data);
+		$this->load->view('widget/card_open', $data);
 	}
 
-	function box_close($footer = '')
+	function card_close($footer = '')
 	{
 		$data = array(
 			'footer'	=> $footer,
 		);
-		$this->load->view('widget/box_close', $data);
+		$this->load->view('widget/card_close', $data);
 	}
 
 	function small_box($color, $number, $label, $icon, $url = '#')
