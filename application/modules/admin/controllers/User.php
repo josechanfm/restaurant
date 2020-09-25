@@ -83,7 +83,7 @@ class User extends Admin_Controller {
 		}
 
 		// get list of Frontend user groups
-		$this->load->model('group_model', 'groups');
+		$this->load->model('groups_model', 'groups');
 		$this->mViewData['groups'] = $this->groups->get_all();
 		$this->mPageTitle = 'Create User';
 
