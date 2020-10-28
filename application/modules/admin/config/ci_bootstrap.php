@@ -85,13 +85,32 @@ $config['ci_bootstrap'] = array(
 	
 	// Multilingual settings
 	'languages' => array(
-		
+		'default'		=> 'zh',
+		'autoload'		=> array('general'),
+		'available'		=> array(
+			'en' => array(
+				'label'	=> 'English',
+				'value'	=> 'english'
+			),
+			'zh' => array(
+				'label'	=> '繁體中文',
+				'value'	=> 'traditional-chinese'
+			),
+			'cn' => array(
+				'label'	=> '简体中文',
+				'value'	=> 'simplified-chinese'
+			),
+			'es' => array(
+				'label'	=> 'Español',
+				'value' => 'spanish'
+			)
+		)
 	),
 
 	// Menu items
 	'menu' => array(
 		'home' => array(
-			'name'		=> 'Home',
+			'name'		=> 'lang:home',
 			'url'		=> '',
 			'icon'		=> 'fa fa-home',
 		),

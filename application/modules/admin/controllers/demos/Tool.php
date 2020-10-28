@@ -12,6 +12,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Tool extends Admin_Controller {
 
+	//Spread Sheet Export
+	public function export(){
+		$this->load->library('my_SpreadSheet');
+		$this->my_spreadsheet->test_export();
+	}
+	public function import(){
+		$this->render('demos/import');	
+	}
+	//Spread Sheet Import and file to array
+	public function import_to_array(){
+		$tmp_file = $_FILES['userfile']['tmp_name'];
+		//tmp file to array
+		$this->load->library('my_SpreadSheet');
+        $data = $this->my_spreadsheet->import_to_array($tmp_file);
+        foreach ($data as $i => $row) {
+        	echo $i.'===';
+        	foreach ($row as  $value) {
+        	echo $value.', ';
+        	}
+        	echo '<br>';
+        }
+        echo '<hr>';
+        echo json_encode($data);
+	}
+
 	public function gen_pdf(){
 		$this->load->model('pdf_model');
 		 $data=array(
@@ -19,19 +44,8 @@ class Tool extends Admin_Controller {
 		 	'date'=>'adsfads'
 		 );
 		$this->pdf_model->print_out($data);
+	}
 
-	}
-	public function import(){
-		$this->load->library('my_Excel');
-		$this->my_excel->excel_import(
-			'assets\uploads\faculties.xlsx',
-			'faculties',
-			1,
-			array('name'=>'B','dean'=>'C','phone'=>'D','start'=>'E'),
-			array('start'=>'date'),
-			array('campus'=>'Main Campus')
-		);
-	}
 	public function mailer(){
 		//$this->add_script('https://www.google.com/recaptcha/api.js',true,'head');
 		$this->load->library('form_builder');
@@ -60,6 +74,6 @@ class Tool extends Admin_Controller {
 
 	public function sms(){
 		$this->render('demos/sms');
-
 	}
+
 }

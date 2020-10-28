@@ -1,6 +1,4 @@
 <!-- Main Sidebar Container -->
-
-
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -14,7 +12,7 @@
 		      <li class='nav-item <?php if ($active) echo 'menu-open'; ?>'>
 		        <a class="nav-link <?php if ($active) echo 'active'; ?>" href='<?php echo $parent_params['url']; ?>'>
 		          <i class='nav-icon <?php echo $parent_params['icon']; ?>'></i> 
-		          <p><?php echo $parent_params['name']; ?></p>
+		          <p><?php echo lang_param($parent_params['name']); ?></p>
 		        </a>
 		      </li>
 
@@ -34,7 +32,7 @@
 			<li class='nav-item has-treeview <?php if ($parent_active) echo 'menu-open'; ?>'>
 				<a href='#' class="nav-link <?php if ($parent_active) echo 'active'; ?>">
 			        <i class='nav-icon <?php echo $parent_params['icon']; ?>'></i> 
-			        <p><?php echo $parent_params['name']; ?>
+			        <p><?php echo lang_param($parent_params['name']); ?>
 		            	<i class="right fas fa-angle-left"></i>
 		          	</p>
 				</a>
@@ -45,7 +43,7 @@
 			            <li class='nav-item'>
 			              <a href='<?php echo $url; ?>' class='nav-link <?php if ($child_active) echo 'active'; ?>'>
 			                <i class='nav-icon far fa-circle'></i>
-			                <p><?php echo $name; ?></p>
+			                <p><?php echo lang_param($name); ?></p>
 			              </a>
 			            </li>
 						<?php endif; ?>
@@ -65,7 +63,7 @@
 			<li class="nav-item">
 				<a href="<?php echo starts_with($link['url'], 'http') ? $link['url'] : base_url($link['url']); ?>" target='<?php echo $link['target']; ?>' class="nav-link">
 					<i class="fa fa-circle-o <?php echo $link['color']; ?>"></i> 
-					<p class="text"><?php echo $link['name']; ?></p>
+					<p class="text"><?php echo lang_param($link['name']); ?></p>
 				</a>
 			</li>
 			<?php endif; ?>
