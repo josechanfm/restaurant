@@ -34,18 +34,24 @@ $config['ci_bootstrap'] = array(
 	// Default scripts to embed at page head or end
 	'scripts' => array(
 		'head'	=> array(
+			'assets/dist/admin/bootstrap4/js/jquery.min.js',
+			'assets/dist/admin/bootstrap4/js/bootstrap.min.js',
+			'assets/dist/admin/bootstrap4/js/adminlte.min.js',
 		),
 		'foot'	=> array(
-			'assets/dist/frontend/lib.min.js',
-			'assets/dist/frontend/app.min.js'
+			//'assets/dist/frontend/lib.min.js',
+			//'assets/dist/frontend/app.min.js'
 		),
 	),
 
 	// Default stylesheets to embed at page head
 	'stylesheets' => array(
 		'screen' => array(
-			'assets/dist/frontend/lib.min.css',
-			'assets/dist/frontend/app.min.css'
+			'assets/dist/admin/bootstrap4/css/bootstrap.min.css',
+			'assets/dist/admin/bootstrap4/css/font-awesome.min.css',
+			'assets/dist/admin/bootstrap4/css/ionicons.min.css',
+			'assets/dist/admin/bootstrap4/css/AdminLTE.min.css',
+			'assets/dist/admin/bootstrap4/css/_all-skins.min.css',
 		)
 	),
 

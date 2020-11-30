@@ -26,6 +26,12 @@ class Home extends MY_Controller {
 		$this->mViewData['form'] = $form;
 		$this->render('email/mailer');
 	}
+	public function table(){
+		$this->add_stylesheet('/assets/dist/admin/bootstrap4/css/dataTables.bootstrap.min.css');
+		$this->add_script('assets/dist/admin/bootstrap4/js/jquery.dataTables.min.js');
+		$this->add_script('assets/dist/admin/bootstrap4/js/dataTables.bootstrap.min.js');
+		$this->render('table');
+	}
 
 	function get_email_prop($post){
 		$data=array(
