@@ -49,6 +49,7 @@ class MY_Controller extends MX_Controller {
 	protected $mGridTitle = '';
 	protected $mGridHeader='';
 	protected $mBackButton = '';
+	protected $mNavbarFixedTop=True;
 
 	// Constructor
 	public function __construct()
@@ -83,6 +84,7 @@ class MY_Controller extends MX_Controller {
 		$this->mScripts = empty($config['scripts']) ? array() : $config['scripts'];
 		$this->mStylesheets = empty($config['stylesheets']) ? array() : $config['stylesheets'];
 		$this->mPageAuth = empty($config['page_auth']) ? array() : $config['page_auth'];
+		$this->mNavbarFixedTop = empty($config['navbar_fixed_top']) ? '' : $config['navbar_fixed_top'];
 
 		// multilingual setup
 		$lang_config = empty($config['languages']) ? array() : $config['languages'];
@@ -236,6 +238,7 @@ class MY_Controller extends MX_Controller {
 		$this->mViewData['grid_title'] = $this->mGridTitle;
 		$this->mViewData['grid_header'] = $this->mGridHeader;
 		$this->mViewData['back_button'] = $this->mBackButton;
+		$this->mViewData['navbar_fixed_top'] = $this->mNavbarFixedTop;
 
 		// automatically push current page to last record of breadcrumb
 		$this->push_breadcrumb($this->mPageTitle);

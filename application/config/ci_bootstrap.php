@@ -23,6 +23,7 @@ $config['ci_bootstrap'] = array(
 
 	// Default page title
 	'page_title' => '',
+	'navbar_fixed_top'=>FALSE,
 
 	// Default meta data
 	'meta_data'	=> array(
@@ -49,6 +50,8 @@ $config['ci_bootstrap'] = array(
 		'screen' => array(
 			'assets/dist/admin/bootstrap4/css/bootstrap.min.css',
 			'assets/dist/admin/bootstrap4/css/font-awesome.min.css',
+			'assets/dist/admin/bootstrap4/css/fontawesome_all.min.css',
+			'assets/dist/admin/bootstrap4/webfonts/fa-solid-900.woff2',
 			'assets/dist/admin/bootstrap4/css/ionicons.min.css',
 			'assets/dist/admin/bootstrap4/css/AdminLTE.min.css',
 			'assets/dist/admin/bootstrap4/css/_all-skins.min.css',

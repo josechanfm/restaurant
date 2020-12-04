@@ -36,10 +36,11 @@ $config['ci_bootstrap'] = array(
 		'head'	=> array(
 /*			'assets/dist/admin/adminlte.min.js',
 			'assets/dist/admin/lib.min.js',
-			'assets/dist/admin/app.min.js'*/
+			'assets/dist/admin/app.min.js'
+*/
+
 			'assets/api/plugins/jquery/jquery.min.js',
 			'assets/api/plugins/jquery-ui/jquery-ui.min.js',
-
 			'assets/api/plugins/bootstrap/js/bootstrap.bundle.min.js',
 			'assets/api/plugins/chart.js/Chart.min.js',
 			'assets/api/plugins/sparklines/sparkline.js',
