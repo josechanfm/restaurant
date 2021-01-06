@@ -46,7 +46,7 @@
 			<li class='nav-item has-treeview <?php if ($parent_active) echo 'menu-open'; ?>'>
 				<a href='#' class="nav-link <?php if ($parent_active) echo 'active'; ?>">
 			        <i class='nav-icon <?php echo $parent_params['icon']; ?>'></i> 
-			        <p><?php echo $parent_params['name']; ?>
+			        <p><?php echo lang($parent_params['name'])==""?$parent_params['name']:lang($parent_params['name']); ?>
 		            	<i class="right fas fa-angle-left"></i>
 		          	</p>
 				</a>
@@ -100,19 +100,3 @@
 </ul>
 
 </nav>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
