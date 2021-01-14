@@ -84,7 +84,7 @@
 	<?php endforeach; ?>
 	
 	<?php if ( !empty($useful_links) ): ?>
-		<li class="header"><span>USEFUL LINKS</span></li>
+		<li class="nav-header"><span>USEFUL LINKS</span></li>
 		<?php foreach ($useful_links as $link): ?>
 			<?php if ($this->ion_auth->in_group($link['auth']) ): ?>
 			<li class="nav-item">
