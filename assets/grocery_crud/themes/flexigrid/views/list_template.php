@@ -92,9 +92,14 @@ if($success_message !== null){?>
 	</div>
 	<?php }?>
 
-	<div id='ajax_list' class="ajax_list">
-		<?php echo $list_view?>
-	</div>
+	<?php
+	if(isset($navigator_ontop) && $navigator_ontop==FALSE){
+		echo '<div id="ajax_list" class="ajax_list">';
+		echo $list_view;
+		echo '</div>';
+	}
+	?>
+
 	<?php echo form_open( $ajax_list_url, 'method="post" id="filtering_form" class="filtering_form" autocomplete = "off" data-ajax-list-info-url="'.$ajax_list_info_url.'"'); ?>
 	<div class="sDiv quickSearchBox" id='quickSearchBox'>
 		<div class="sDiv2">
@@ -111,6 +116,16 @@ if($success_message !== null){?>
         	<input type="button" value="<?php echo $this->l('list_clear_filtering');?>" id='search_clear' class="search_clear">
         </div>
 	</div>
+
+	<?php
+	if(isset($navigator_ontop) && $navigator_ontop){
+		echo '<div id="ajax_list" class="ajax_list">';
+		echo $list_view;
+		echo '</div>';
+	}
+	?>
+
+
 	<div class="pDiv">
 		<div class="pDiv2">
 			<div class="pGroup">

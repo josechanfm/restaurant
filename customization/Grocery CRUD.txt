@@ -1,0 +1,57 @@
+Update 1.6.4 on 10/02/2021
+
+========================================
+SEARCH FOR DATE FORMATE
+The original design exclude the Date, Datetime and Timestamp field type for search in CRUD list view.
+
+The modification is try to give more flaxible way to manage what kind of data field are going to exclude.
+
+Firstly, we give a variable on Grocry CRUD config file in line 44:
+   $config['grocery_crud_list_search_exclude']=array('datetime','timestamp');
+
+
+Secondly, we change the if statment on /libray/grocery_CRUD.php in line 700
+//!in_array($field_types[$column->field_name]->type, array('date', 'datetime', 'timestamp'))
+
+!in_array($field_types[$column->field_name]->type, $this->config->search_exclude)
+
+
+=======================================
+NAVIGATOR BAR WITH SEARCH BOX IN CRUD LIST VIEW
+Give a config variable to set the Navigator bar before or after the list view, The seting is in the config/grocery_crud.php in the module.
+
+1. admin/config/grocry_curd.php
+line 69, 71
+    $config['grocery_crud_list_search_exclude'] = array('datetime','timestamp');
+
+    $config['grocery_crud_navigator_ontop'] = true;
+
+2. assets/grocery_crud/themes/views/list_template.php
+
+Line: 95
+	<?php
+	if(isset($navigator_ontop) && $navigator_ontop==FALSE){
+		echo '<div id="ajax_list" class="ajax_list">';
+		echo $list_view;
+		echo '</div>';
+	}
+	?>
+
+
+Line: 120
+	<?php
+	if(isset($navigator_ontop) && $navigator_ontop){
+		echo '<div id="ajax_list" class="ajax_list">';
+		echo $list_view;
+		echo '</div>';
+	}
+	?>
+
+
+
+3. third/party/grocery_crud/libraries/Grocery_CRUD.php
+Line: 1698
+		$data->navigator_ontop 		= $this->config->navigator_ontop;
+
+Line: 4620
+        $this->config->navigator_ontop		= $ci->config->item('grocery_crud_navigator_ontop');

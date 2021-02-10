@@ -9,7 +9,7 @@
     $config['grocery_crud_default_per_page'] = 10;
 
     $config['grocery_crud_file_upload_allow_file_types'] = 'gif|jpeg|jpg|png|tiff|doc|docx|txt|odt|xls|xlsx|pdf|ppt|pptx|pps|ppsx|mp3|m4a|ogg|wav|mp4|m4v|mov|wmv|flv|avi|mpg|ogv|3gp|3g2';
-    $config['grocery_crud_file_upload_max_file_size'] = '20MB'; //ex. '10MB' (Mega Bytes), '1067KB' (Kilo Bytes), '5000B' (Bytes)
+    $config['grocery_crud_file_upload_max_file_size'] = '20MB'; //eg. '10MB' (Mega Bytes), '1067KB' (Kilo Bytes), '5000B' (Bytes)
 
     // You can choose 'ckeditor','tinymce' or 'markitup'
     $config['grocery_crud_default_text_editor'] = 'ckeditor';
@@ -36,4 +36,12 @@
 
     // Turn XSS clean into true in case you are exposing your CRUD into public. Please be aware that this is
     // stripping all the HTML and do not just trim the extra javascript
-    $config['grocery_crud_xss_clean'] = false;
+    $config['grocery_crud_xss_clean'] = true;
+
+    //Add my Jose on 10/02/2021
+    //Exclude search field by type
+    //Default: array('date','datetime','timestamp')
+    //Those will be over rithg by the config of the  module
+    $config['grocery_crud_list_search_exclude'] = array('date','datetime','timestamp');
+
+    $config['grocery_crud_navigator_ontop'] = true;

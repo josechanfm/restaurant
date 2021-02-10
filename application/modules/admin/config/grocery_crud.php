@@ -61,3 +61,11 @@
 		'author_id'				=> 'Author',
 		'category_id'			=> 'Category',
 	);
+    $config['grocery_crud_navigator_ontop'] = true;
+
+    //Add my Jose on 10/02/2021
+    //Exclude search field by type
+    //Default: array('date','datetime','timestamp')
+    $config['grocery_crud_list_search_exclude'] = array('datetime','timestamp');
+
+    $config['grocery_crud_navigator_ontop'] = true;
