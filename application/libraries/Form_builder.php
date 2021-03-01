@@ -298,7 +298,7 @@ class Form {
 		if(!is_array($extra)) $extra=array();
 		$extra['class'] = 'form-control';
 		$script='<script>	$(function(){//Date picker
-	    $("#'.$name.'").datepicker({autoclose: true, format:"'.$format.'"'.$view.' 
+	    $("#'.$name.'").daterangepicker({singleDatePicker: true, format:"'.$format.'"'.$view.' 
 	    }) });</script>';
 
 		//$extra['id'] = 'datepicker';

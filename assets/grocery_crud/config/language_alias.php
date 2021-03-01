@@ -29,5 +29,6 @@ $language_alias = array(
     'thai'              => 'th', // Timepicker is not avaliable yet
     'turkish'           => 'tr',
     'ukrainian'         => 'uk',
-    'vietnamese'        => 'vi'
+    'vietnamese'        => 'vi',
+    'zh-tw.chinese'     => 'zh'
 );

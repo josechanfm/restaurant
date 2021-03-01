@@ -76,7 +76,6 @@ $config['ci_bootstrap'] = array(
 			'assets/api/plugins/overlayScrollbars/css/OverlayScrollbars.min.css',
 			'assets/api/plugins/daterangepicker/daterangepicker.css',
 			'assets/api/plugins/summernote/summernote-bs4.css',
-			
 			'assets/dist/admin/lib.min.css',
 			'assets/dist/admin/app.min.css'
 		)

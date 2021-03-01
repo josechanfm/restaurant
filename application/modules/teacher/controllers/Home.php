@@ -13,16 +13,4 @@ class Home extends Admin_Controller {
 
 		$this->render('home');
 	}
-
-	public function test_form(){
-		$this->load->library('form_builder');
-		$form = $this->form_builder->create_form();
-
-		if ($form->validate())
-		{
-		}
-		$this->mViewData['form']=$form;
-		$this->mViewData['unit_id']=$unitId;
-		$this->render('test_form','full_width');
-	}
 }
