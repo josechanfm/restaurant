@@ -20,12 +20,12 @@ $(function() {
 	       
         ],
                 //this code below for kcfinder           
-                filebrowserBrowseUrl:           '../../../../../assets/grocery_crud/texteditor/ckeditor/kcfinder/browse.php?opener=ckeditor&type=files',
-                filebrowserImageBrowseUrl:      '../../../../../assets/grocery_crud/texteditor/ckeditor/kcfinder/browse.php?opener=ckeditor&type=images',
-                filebrowserFlashBrowseUrl:      '../../../../../assets/grocery_crud/texteditor/ckeditor/kcfinder/browse.php?opener=ckeditor&type=flash',
-                filebrowserUploadUrl:           '../../../../../assets/grocery_crud/texteditor/ckeditor/kcfinder/upload.php?opener=ckeditor&type=files',
-                filebrowserImageUploadUrl:      '../../../../../assets/grocery_crud/texteditor/ckeditor/kcfinder/upload.php?opener=ckeditor&type=images',
-                filebrowserFlashUploadUrl:      '../../../../../assets/grocery_crud/texteditor/ckeditor/kcfinder/upload.php?opener=ckeditor&type=flash'
+                filebrowserBrowseUrl:           base_url+'assets/grocery_crud/texteditor/ckeditor/kcfinder/browse.php?opener=ckeditor&type=files',
+                filebrowserImageBrowseUrl:      base_url+'assets/grocery_crud/texteditor/ckeditor/kcfinder/browse.php?opener=ckeditor&type=images',
+                filebrowserFlashBrowseUrl:      base_url+'assets/grocery_crud/texteditor/ckeditor/kcfinder/browse.php?opener=ckeditor&type=flash',
+                filebrowserUploadUrl:           base_url+'assets/grocery_crud/texteditor/ckeditor/kcfinder/upload.php?opener=ckeditor&type=files',
+                filebrowserImageUploadUrl:      base_url+'assets/grocery_crud/texteditor/ckeditor/kcfinder/upload.php?opener=ckeditor&type=images',
+                filebrowserFlashUploadUrl:      base_url+'assets/grocery_crud/texteditor/ckeditor/kcfinder/upload.php?opener=ckeditor&type=flash'
                 
        
                 

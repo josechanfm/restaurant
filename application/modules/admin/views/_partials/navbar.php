@@ -22,7 +22,7 @@
          <a class="nav-link" data-toggle="dropdown" href="#">
            <div class="user-panel mt-1 pt-0 pb-2 mb-1 d-flex">
             <div class="image">
-              <img src="../assets/dist/images/user2-160x160.jpg" class="img-circle elevation-1" alt="User Image">
+              <img src="../../assets/dist/images/user2-160x160.jpg" class="img-circle elevation-1" alt="User Image">
             </div>
             <div class="info">
               <?php echo $user->first_name; ?>
@@ -37,7 +37,7 @@
                 <h3 class="widget-user-username"> <?php echo $user->first_name; ?></h3>
               </div>
               <div class="widget-user-image">
-                <img class="img-circle elevation-2" src="../assets/dist/images/user2-160x160.jpg" alt="User Image">
+                <img class="img-circle elevation-2" src="../../assets/dist/images/user2-160x160.jpg" alt="User Image">
               </div>
               <div class="card-footer">
                 <div class="row">

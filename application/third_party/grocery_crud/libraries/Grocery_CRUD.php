@@ -2398,7 +2398,11 @@ class grocery_CRUD_Layout extends grocery_CRUD_Model_Driver
 					$this->set_js_lib($this->default_texteditor_path.'/ckeditor/adapters/jquery.js');
 					$this->set_js_config($this->default_javascript_path.'/jquery_plugins/config/jquery.ckeditor.config.js');
 				break;
-
+				case 'ckeditor4':
+					$this->set_js_lib($this->default_texteditor_path.'/ckeditor4/ckeditor.js');
+					$this->set_js_lib($this->default_texteditor_path.'/ckeditor4/adapters/jquery.js');
+					$this->set_js_config($this->default_javascript_path.'/jquery_plugins/config/jquery.ckeditor4.config.js');
+				break;
 				case 'tinymce':
 					$this->set_js_lib($this->default_texteditor_path.'/tiny_mce/jquery.tinymce.js');
 					$this->set_js_config($this->default_javascript_path.'/jquery_plugins/config/jquery.tine_mce.config.js');
