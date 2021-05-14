@@ -59,6 +59,7 @@ function lang_url($lang, $url = NULL)
 					$target_url = str_replace("/$segment_1", "/$lang", current_full_url());
 				else
 					$target_url = str_replace("/$segment_1/", "/$lang/", current_full_url());
+
 			}
 			else
 			{

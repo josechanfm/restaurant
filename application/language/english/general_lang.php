@@ -24,3 +24,5 @@
 	$lang['send'] = "Send";
 	$lang['download'] = "Download";
 	$lang['read_more'] = "Read More";
+
+	$lang['test_lang']="Testing Language pack";

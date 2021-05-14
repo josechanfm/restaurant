@@ -24,3 +24,5 @@
 	$lang['send'] = "發送";
 	$lang['download'] = "下載";
 	$lang['read_more'] = "閱讀更多";
+
+	$lang['test_lang']="測試語言包";

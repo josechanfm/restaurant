@@ -105,7 +105,8 @@ class MY_Controller extends MX_Controller {
 			$language = array_key_exists($this->uri->segment(1), $this->mAvailableLanguages) ? $this->uri->segment(1) : $lang_config['default'];
 
 			// append to base URL
-			$this->mBaseUrl.= $language.'/';
+			//$this->mBaseUrl.= $language.'/';
+			$this->mBaseUrl = empty($this->mModule) ? base_url() : base_url($language.'/'.$this->mModule).'/';
 
 			// autoload language files
 			foreach ($lang_config['autoload'] as $file)
