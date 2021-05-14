@@ -1,10 +1,39 @@
-<?php $this->load->view('_partials/navbar'); ?>
+<div class="wrapper">
+	<?php $this->load->view('_partials/navbar'); ?>
 
-<div class="container">
-	<div class="page-header"><h1><?php echo $page_title; ?></h1></div>
-	<section class="content">
-		<?php $this->load->view($inner_view); ?>
-	</section>
+<div class="content-wrapper" style="min-height: 623px;">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0"> Top Navigation <small>Example 3.0</small></h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="#">Layout</a></li>
+              <li class="breadcrumb-item active">Top Navigation</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <div class="content">
+      <div class="container">
+        <div class="row">
+			<?php $this->load->view($inner_view); ?>
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+  </div>
+
+	<?php $this->load->view('_partials/footer'); ?>
 </div>
 
-<?php $this->load->view('_partials/footer'); ?>
+

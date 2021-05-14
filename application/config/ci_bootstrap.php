@@ -36,7 +36,8 @@ $config['ci_bootstrap'] = array(
 	'scripts' => array(
 		'head'	=> array(
 			'assets/dist/admin/bootstrap4/js/jquery.min.js',
-			'assets/dist/admin/bootstrap4/js/bootstrap.min.js',
+			'assets/dist/admin/bootstrap4/js/jquery.min.js',
+			'assets/plugins/bootstrap/js/bootstrap.bundle.js',
 			'assets/dist/admin/bootstrap4/js/adminlte.min.js',
 		),
 		'foot'	=> array(
@@ -48,12 +49,11 @@ $config['ci_bootstrap'] = array(
 	// Default stylesheets to embed at page head
 	'stylesheets' => array(
 		'screen' => array(
-			'assets/dist/admin/bootstrap4/css/bootstrap.min.css',
 			'assets/dist/admin/bootstrap4/css/font-awesome.min.css',
-			'assets/dist/admin/bootstrap4/css/fontawesome_all.min.css',
+			//'assets/dist/admin/bootstrap4/css/fontawesome_all.min.css',
 			'assets/dist/admin/bootstrap4/webfonts/fa-solid-900.woff2',
 			'assets/dist/admin/bootstrap4/css/ionicons.min.css',
-			'assets/dist/admin/bootstrap4/css/AdminLTE.min.css',
+			'assets/dist/admin/bootstrap4/css/adminlte.min.css',
 			'assets/dist/admin/bootstrap4/css/_all-skins.min.css',
 		)
 	),
@@ -93,6 +93,21 @@ $config['ci_bootstrap'] = array(
 		'home' => array(
 			'name'		=> 'Home',
 			'url'		=> '',
+		),
+		'contact'=>array(
+			'name'	=>'Contact',
+			'url'	=>'contact'
+		),
+		'dropdown'=>array(
+			'name'		=> 'Dropdown',
+			'url'		=> 'dropdown',
+			'icon'		=> 'fa fa-users',
+			'children'  => array(
+				'List'			=> 'user',
+				'Create'		=> 'user/create',
+				'divider'		=>	'---',
+				'User Groups'	=> 'user/group',
+			)
 		),
 	),
 
