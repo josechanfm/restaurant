@@ -10,7 +10,7 @@ class ConvertPdf extends MY_Controller {
 	public function index()
 	{
 		require FCPATH. '/vendor/spatie/autoload.php';
-		echo \Spatie\PdfToText\Pdf::getText(FCPATH.'/uploads/pdf/StoryStudio.pdf');
+		echo \Spatie\PdfToText\Pdf::getText(FCPATH.'/uploads/pdf/44273-abc.pdf');
 	}
 
 }
