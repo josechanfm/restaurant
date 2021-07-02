@@ -29,7 +29,11 @@ class Admin_Controller extends MY_Controller {
 		// load skin according to user role
 		$config = $this->mConfig['adminlte'];
 		$default_body_class=$this->mConfig['body_class'];
-		$this->mBodyClass = $default_body_class.' '.$config['body_class'][$this->mUserMainGroup];
+		if(isset($body_class[$this->mUserMainGroup])){
+			$this->mBodyClass = $default_body_class.' '.$config['body_class'][$this->mUserMainGroup];
+		}else{
+			$this->mBodyClass = $default_body_class.' '.$config['body_class']['staff'];
+		}
 
 		// additional view data
 		$this->mViewData['useful_links'] = $this->mUsefulLinks;

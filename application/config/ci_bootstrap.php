@@ -59,7 +59,7 @@ $config['ci_bootstrap'] = array(
 	),
 
 	// Default CSS class for <body> tag
-	'body_class' => '',
+	'body_class' => 'layout-top-nav',
 	
 	// Multilingual settings
 	'languages' => array(
