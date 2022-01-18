@@ -30,7 +30,7 @@
   	foreach($products as $item){
   ?>
     <div class="col-md-3 text-center">
-      <img src="../assets/products/images/<?php echo $item['image']?>" width="150px" height="150px">
+      <img src="../../assets/products/images/<?php echo $item['image']?>" width="150px" height="150px">
       <br>
       <?php echo $item['name'].'<strong>$'.$item['id'].'</strong>'?>
       <br>
@@ -40,7 +40,7 @@
 		data-summary="<?php echo $item['description']?>"
 		data-price="<?php echo $item['dealer_price']?>"
 		data-quantity="1" 
-		data-image="../assets/products/images/<?php echo $item['image']?>"
+		data-image="../../assets/products/images/<?php echo $item['image']?>"
 	>Add to Cart</button>
       <button type="button" id="show-info" class="btn btn-info" data-toggle="modal" data-target="#modal-product-info"
 		data-id="<?php echo $item['id']?>" 
@@ -48,7 +48,7 @@
 		data-summary="<?php echo $item['description']?>"
 		data-price="<?php echo $item['dealer_price']?>"
 		data-quantity="1"
-		data-image="../assets/products/images/<?php echo $item['image']?>"
+		data-image="../../assets/products/images/<?php echo $item['image']?>"
 	>Details</button>
 	<span id="hidden_description" hidden><?php echo $item["remarks"]?></span>
     </div>

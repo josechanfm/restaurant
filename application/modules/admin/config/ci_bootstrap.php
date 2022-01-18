@@ -112,7 +112,7 @@ $config['ci_bootstrap'] = array(
 	// Menu items
 	'menu' => array(
 		'home' => array(
-			'name'		=> 'lang:home',
+			'name'		=> 'home',
 			'url'		=> '',
 			'icon'		=> 'fa fa-home',
 		),

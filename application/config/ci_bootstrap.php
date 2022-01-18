@@ -36,7 +36,6 @@ $config['ci_bootstrap'] = array(
 	'scripts' => array(
 		'head'	=> array(
 			'assets/dist/admin/bootstrap4/js/jquery.min.js',
-			'assets/dist/admin/bootstrap4/js/jquery.min.js',
 			'assets/plugins/bootstrap/js/bootstrap.bundle.js',
 			'assets/dist/admin/bootstrap4/js/adminlte.min.js',
 		),

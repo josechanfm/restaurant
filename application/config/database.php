@@ -78,11 +78,7 @@ $db['default'] = array(
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => '',
-<<<<<<< HEAD
-	'database' => 'analizer',
-=======
-	'database' => 'mingle',
->>>>>>> 828ae849dc8f5d3079625c79ec287b65f781ecb2
+	'database' => 'lend',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
