@@ -16,7 +16,7 @@ $config['ci_bootstrap'] = array(
 
 	// Site name
 	'site_name' => 'Admin Panel',
-	'site_name_mini'=>'CI3',
+	'site_name_mini'=>'Lend',
 	
 	// Default page title prefix
 	'page_title_prefix' => '',
@@ -54,7 +54,7 @@ $config['ci_bootstrap'] = array(
 			'assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js',
 			'assets/dist/admin/bootstrap4/js/adminlte.min.js',
 			'assets/dist/admin/lib.min.js',
-			'assets/dist/admin/app.min.js'
+			'assets/dist/admin/app.min.js',
 
 		),
 		'foot'	=> array(
@@ -78,7 +78,7 @@ $config['ci_bootstrap'] = array(
 			'assets/plugins/summernote/summernote-bs4.css',
 			
 			'assets/dist/admin/lib.min.css',
-			'assets/dist/admin/app.min.css'
+			'assets/dist/admin/app.min.css',
 		)
 	),
 
@@ -116,30 +116,31 @@ $config['ci_bootstrap'] = array(
 			'url'		=> '',
 			'icon'		=> 'fa fa-home',
 		),
-		'demo' => array(
-			'name'		=> 'Demos',
-			'url'		=> 'demos',
+		'contest' => array(
+			'name'		=> 'Contests',
+			'url'		=> 'contest',
 			'icon'		=> 'fa fa-bank',
 			'children'  => array(
-				'Faculty'		=> 'demos/faculty',
-				'Department'	=> 'demos/department',
-				'Course'	=>'demos/course',
-				'Gen PDF'	=>'demos/tool/gen_pdf',
-				'Import'	=>'demos/tool/import',
-				'Mailer'	=>'demos/tool/mailer',
-				'SMS'		=>'demos/tool/sms',
-				'Products'		=>'demos/product/',
-				'Shopping Cart'		=>'demos/product/cart'
+				'List'	=> 'contest',
+				'Analyzer'	=> 'contest/analyzer',
 			)
 		),
-		'lend' => array(
-			'name'		=> 'Lend',
-			'url'		=> 'lend',
+		'document' => array(
+			'name'		=> 'Documents',
+			'url'		=> 'document',
 			'icon'		=> 'fa fa-bank',
 			'children'  => array(
-				'Products'	=> 'lent',
-				'Available'	=> 'lent/available',
-				'Lent'		=>'lent/lent',
+				'List'	=> 'document',
+				'ABC'	=> 'document/abc',
+			)
+		),
+		'event' => array(
+			'name'		=> 'Events',
+			'url'		=> 'event',
+			'icon'		=> 'fa fa-bank',
+			'children'  => array(
+				'List'	=> 'event',
+				'ABC'	=> 'event/abc',
 			)
 		),
 		'user' => array(
@@ -162,14 +163,6 @@ $config['ci_bootstrap'] = array(
 				'Admin User Groups'		=> 'panel/admin_user_group',
 			)
 		),
-		'util' => array(
-			'name'		=> 'Utilities',
-			'url'		=> 'util',
-			'icon'		=> 'fa fa-cogs',
-			'children'  => array(
-				'Database Versions'		=> 'util/list_db',
-			)
-		),
 		'logout' => array(
 			'name'		=> 'Sign Out',
 			'url'		=> 'panel/logout',
@@ -178,7 +171,7 @@ $config['ci_bootstrap'] = array(
 	),
 
 	// Login page
-	'login_url' => 'admin/login',
+	'login_url' => 'member/registration/login',
 
 	// Restricted pages
 	'page_auth' => array(
@@ -188,11 +181,6 @@ $config['ci_bootstrap'] = array(
 		'panel/admin_user'			=> array('webmaster'),
 		'panel/admin_user_create'	=> array('webmaster'),
 		'panel/admin_user_group'	=> array('webmaster'),
-		'util'						=> array('webmaster'),
-		'util/list_db'				=> array('webmaster'),
-		'util/backup_db'			=> array('webmaster'),
-		'util/restore_db'			=> array('webmaster'),
-		'util/remove_db'			=> array('webmaster'),
 	),
 
 	// AdminLTE settings
@@ -255,4 +243,4 @@ $config['ci_bootstrap'] = array(
 | Override values from /application/config/config.php
 | -------------------------------------------------------------------------
 */
-$config['sess_cookie_name'] = 'ci_session_admin';
+$config['sess_cookie_name'] = 'stc_session_member';
