@@ -28,7 +28,7 @@ class Pdf_model extends MY_Model {
 
          $pdf->write2DBarcode('http://localhost', 'QRCODE', 100, 30, 50, 50, $style);
 
-        //$pdf->SetFont('cid0ct', '', 20);
+        $pdf->SetFont('cid0ct', '', 20);
         $pdf->Cell($w, $h, 'Title: '.$data['title'], $border, $ln, $align, $fill, $link, $stretch, $ignore_min_height, $calign, $valign); 
 
         $pdf->Output('QRCODE.pdf', 'I');
