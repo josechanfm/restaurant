@@ -1,4 +1,62 @@
 <?php $this->load->view('card_header')?>
+
+
+<div class="row">
+  <div class="col-md-6 col-12">
+    <div class="card card-primary">
+      <div class="card-header">
+        <h3 class="card-title">Collapsible Card Example</h3>
+        <div class="card-tools">
+          <!-- Collapse Button -->
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+        </div>
+        <!-- /.card-tools -->
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body">
+                <ul class="products-list product-list-in-card pl-2 pr-2">
+                  <li class="item">
+                    <div class="product-img">
+                      <img src="../../assets/dist/images/default-150x150.png" alt="Product Image" class="img-size-50">
+                    </div>
+                    <div class="product-info">
+                      <a href="./contest/item/" class="product-title">Contest 1 title
+                        <span class="badge badge-warning float-right">2</span></a>
+                      <span class="product-description">
+                        Contest 1
+                      </span>
+                    </div>
+                  </li>
+                  <!-- /.item -->
+                </ul>
+      </div>
+      <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+
+    <div class="card card-success collapsed-card">
+      <div class="card-header">
+        <h3 class="card-title">Collapsible Card Example</h3>
+        <div class="card-tools">
+          <!-- Collapse Button -->
+          <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+        </div>
+        <!-- /.card-tools -->
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body">
+        The body of the card
+      </div>
+      <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+
+  </div>
+</div>
+
+
+
+
 <div class="row">
   <div class="col-md-6 col-12">
       <div id="accordion">
@@ -18,7 +76,7 @@
                       <img src="../../assets/dist/images/default-150x150.png" alt="Product Image" class="img-size-50">
                     </div>
                     <div class="product-info">
-                      <a href="./contest/item/<?=$contest->id?>" class="product-title">Contest 1 title
+                      <a href="./contest/item/" class="product-title">Contest 1 title
                         <span class="badge badge-warning float-right">2</span></a>
                       <span class="product-description">
                         Contest 1
