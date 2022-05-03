@@ -10,6 +10,11 @@ class Home extends MY_Controller {
 	{
 		$this->render('home');
 	}
+	public function page(){
+		$this->load->library('MY_Pagination','pagination');
+		$pages=$this->pagination->render(100,10,'abc');
+		echo json_encode($pages);
+	}
 
 	public function mailer(){
 		$this->add_script('https://www.google.com/recaptcha/api.js',true,'head');
