@@ -54,7 +54,8 @@ $config['ci_bootstrap'] = array(
 			'assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js',
 			'assets/dist/admin/bootstrap4/js/adminlte.min.js',
 			'assets/dist/admin/lib.min.js',
-			'assets/dist/admin/app.min.js'
+			'assets/dist/admin/app.min.js',
+			'assets/dist/vue/index.js',
 
 		),
 		'foot'	=> array(
@@ -78,7 +79,8 @@ $config['ci_bootstrap'] = array(
 			'assets/plugins/summernote/summernote-bs4.css',
 			
 			'assets/dist/admin/lib.min.css',
-			'assets/dist/admin/app.min.css'
+			'assets/dist/admin/app.min.css',
+			'assets/dist/vue/index.css',
 		)
 	),
 
@@ -124,6 +126,7 @@ $config['ci_bootstrap'] = array(
 				'Faculty'		=> 'demos/faculty',
 				'Department'	=> 'demos/department',
 				'Course'	=>'demos/course',
+				'Event'	=>'demos/event',
 				'Gen PDF'	=>'demos/tool/gen_pdf',
 				'Import'	=>'demos/tool/import',
 				'Mailer'	=>'demos/tool/mailer',

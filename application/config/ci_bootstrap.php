@@ -38,6 +38,9 @@ $config['ci_bootstrap'] = array(
 			'assets/dist/admin/bootstrap4/js/jquery.min.js',
 			'assets/plugins/bootstrap/js/bootstrap.bundle.js',
 			'assets/dist/admin/bootstrap4/js/adminlte.min.js',
+			'assets/dist/vue/axios.min.js',
+			'assets/dist/vue/vue.min.js',
+			'assets/dist/vue/index.js'
 		),
 		'foot'	=> array(
 			//'assets/dist/frontend/lib.min.js',
@@ -54,6 +57,7 @@ $config['ci_bootstrap'] = array(
 			'assets/dist/admin/bootstrap4/css/ionicons.min.css',
 			'assets/dist/admin/bootstrap4/css/adminlte.min.css',
 			'assets/dist/admin/bootstrap4/css/_all-skins.min.css',
+			'assets/dist/vue/index.css'
 		)
 	),
 
