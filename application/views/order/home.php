@@ -1,7 +1,7 @@
 <div id="mySidebar" class="sidebar">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
   <?php  foreach($categories as $category):  ?>
-    <a href="#">About</a>
+    <a href="#"><?=$category->title_zh?></a>
   <?php endforeach?>
   
 </div>
@@ -9,8 +9,7 @@
 <div id="main">
   <div class="card">
     <div class="card-header border-0">
-      <button class="openbtn" onclick="openNav()">☰ Order</button>  
-      
+      <button class="openbtn" onclick="openNav()">☰ Menu</button>  
       <div class="card-tools">
         <a href="#" class="btn btn-sm btn-tool">
           <i class="fa fa-shopping-cart"></i>
@@ -19,9 +18,13 @@
       </div>
     </div>
     <div class="card-body">
+      <div class="row" id="no_order" style="display:none">
+        <h3>No order yet!</h3>
+      </div>
       <?php 
       foreach($products as $product):
       ?>
+      <span class="product_item">
         <div class="row">
             <div class="col-4">
               <img src="./uploads/products/images/<?=$product->image?>" class="dish_image">
@@ -43,6 +46,7 @@
             </div>
         </div>
         <hr>
+      </span>
       <?php endforeach;?>
 
 
@@ -53,9 +57,9 @@
 
 <div class="footer">
       <div class="navbar">
-        <a href="#home" class="active"><i class="fa fa-home"></i></a>
+        <a id="order_home" class="active"><i class="fa fa-home"></i></a>
         <a href="#"><i class="fa fa-commenting-o"></i></a>
-        <a href="#"><i class="fa fa-list"></i></a>
+        <a id="ordered_list"><i class="fa fa-list"></i></a>
         <a href="#"><i class="fa fa-user"></i></a>
         <a href="#"><i class="fa fa-shopping-cart"></i></a>
       </div>
@@ -64,15 +68,13 @@
 
 <script>
   products={};
+  order_count=0;
   $(document).on("click",".product_plus",function(){
     selected='p'+$(this).data("product_id");
-    console.log(products[selected]);
     if(products[selected]===undefined){
       products[selected]=1;
-      console.log('add new');
     }else{
       products[selected]=products[selected]+1;
-      console.log('add more');
     }
     refresh_cart();
   })
@@ -86,18 +88,32 @@
     }
     refresh_cart();
   })
+  $("#order_home").click(function(){
+    $(".product_ordered").closest(".product_item").show();
+  })
+  $("#ordered_list").click(function(){
+    if(order_count==0){
+      $("#no_order").show();
+      return;
+    }
+    $(".product_ordered").closest(".product_item").hide();
+    $.each(products, function(index,value){
+      $("#"+index).closest(".product_item").show();
+    })
+  })
 
   function refresh_cart(){
+    $("#no_order").hide();
     $(".product_ordered").hide();
-    count=0;
+    order_count=0;
     $.each(products, function(index,value){
       if(value>0){
         $("#"+index).show();
         $("#"+index).text(value);
       }
-      count+=value;
+      order_count+=value;
     })
-    $("#products_ordered").text(count);
+    $("#products_ordered").text(order_count);
 
   }
 
