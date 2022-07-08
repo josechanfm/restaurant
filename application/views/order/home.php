@@ -27,11 +27,11 @@
               <img src="./uploads/products/images/<?=$product->image?>" class="dish_image">
             </div>
             <div class="col-8">
-              <div class="dish_title">Delicious 1</div>
+              <div class="dish_title"><?=$product->name?></div>
               <div>
-                <span class="dish_price">$123.00</span>
+                <span class="dish_price">MOP$<?=$product->price?></span>
                 <span class="dish_order pull-right">
-                  <span class="badge badge-danger navbar-badge" id="p<?=$product->id?>" hidden>0</span>
+                  <span class="badge badge-danger navbar-badge product_ordered" id="p<?=$product->id?>" style="display:none">0</span>
                   <a class="product_minus" data-product_id="<?=$product->id?>"><i class="fa fa-minus"></i></a>
                   <a class="product_plus" data-product_id="<?=$product->id?>"><i class="fa fa-plus"></i></a>
                 </span>
@@ -88,11 +88,16 @@
   })
 
   function refresh_cart(){
+    $(".product_ordered").hide();
     count=0;
     $.each(products, function(index,value){
+      if(value>0){
+        $("#"+index).show();
+        $("#"+index).text(value);
+      }
       count+=value;
     })
-    $("#product_ordereds").text(count);
+    $("#products_ordered").text(count);
 
   }
 
@@ -119,6 +124,7 @@
   }  
   .dish_image{
     width:100%;
+    min-height:100px;
   }
   .dish_order i{
     background-color: blanchedalmond;
